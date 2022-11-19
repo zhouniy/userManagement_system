@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>修改部门</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    编辑部门
+                </h3>
+            </div>
+
+            <div class="panel-body">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>部门</label>
+                        <input type="text" name="title" value="{{ queryset.title }}" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">修 改</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
